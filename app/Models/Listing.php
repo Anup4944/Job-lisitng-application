@@ -9,12 +9,14 @@ class Listing extends Model
 {
     use HasFactory;
 
+    // prevents for form data
+    protected $fillable = ['title','company', 'location','website','email','description','tags'];
+
     public function scopeFilter($query, array $filters)
     {
         if($filters['tag'] ?? false){
             $query->where('tags', 'like', '%' . request('tag'). '%');
         }
-
 
         if($filters['search'] ?? false){
             $query->where('title', 'like', '%' . request('search'). '%') 
@@ -23,6 +25,5 @@ class Listing extends Model
         }
 
     }
-
    
 }
