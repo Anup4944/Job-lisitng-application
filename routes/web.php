@@ -6,33 +6,31 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
 
 // All Listing
-Route::get('/', [ListingController::class, 'index'] );
+Route::get("/", [ListingController::class, "index"]);
 
 // Show create forms
 
-Route::get('/listings/create', [ListingController::class, 'create']);
-
+Route::get("/listings/create", [ListingController::class, "create"]);
 
 // Store Listing data
 
-Route::post('/listings', [ListingController::class, 'store']);
-
+Route::post("/listings", [ListingController::class, "store"]);
 
 // Show edit form
 
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+Route::get("/listings/{listing}/edit", [ListingController::class, "edit"]);
 
 // Edit submit to Update
 
-Route::put('/listings/{listing}', [ListingController::class, 'update' ]);
+Route::put("/listings/{listing}", [ListingController::class, "update"]);
+
+// Edit submit to Update
+
+Route::delete("/listings/{listing}", [ListingController::class, "destroy"]);
 
 // Single Listing
 
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
-
-
-
-
+Route::get("/listings/{listing}", [ListingController::class, "show"]);
 
 // Comman resource routes:
 // index - show all
@@ -41,4 +39,4 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // store = store new lisitng
 // edit = show form to edit listing
 // update - update listing
-// destroy - delete lisitng 
+// destroy - delete lisitng
