@@ -164,7 +164,7 @@
 
     <div class="mb-6">
         <button
-            class="bg-laravel text-white rounded py-2 px-4 hover:bg-black"
+            class="bg-black text-white rounded py-2 px-4"
         >
             Post
         </button>

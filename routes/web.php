@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Listing;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ListingController;
@@ -41,6 +39,13 @@ Route::put("/listings/{listing}", [
 Route::delete("/listings/{listing}", [
     ListingController::class,
     "destroy",
+])->middleware("auth");
+
+// Manage listings
+
+Route::get("/listings/manage", [
+    ListingController::class,
+    "manage",
 ])->middleware("auth");
 
 // Single Listing
