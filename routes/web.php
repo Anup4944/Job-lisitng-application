@@ -45,6 +45,14 @@ Route::post("/users", [UserController::class, "store"]);
 
 Route::post("/logout", [UserController::class, "logout"]);
 
+// Show login form
+
+Route::get("/login", [UserController::class, "login"]);
+
+// Login user
+
+Route::post("/users/auth", [UserController::class, "auth"]);
+
 // Comman resource routes:
 // index - show all
 // show - show individual
