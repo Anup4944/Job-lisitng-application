@@ -16,6 +16,7 @@ class Listing extends Model
         "company",
         "user_id",
         "location",
+        "logo",
         "website",
         "email",
         "description",
